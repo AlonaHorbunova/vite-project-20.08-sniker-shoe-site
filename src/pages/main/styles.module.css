@@ -1,0 +1,34 @@
+.bannerContainer {
+  width: 100%;
+  max-width: 1420px;
+  margin: 0 auto 20px;
+  padding-top: 28px;
+  box-sizing: border-box;
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.bannerContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.productCard {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+  box-sizing: border-box;
+}

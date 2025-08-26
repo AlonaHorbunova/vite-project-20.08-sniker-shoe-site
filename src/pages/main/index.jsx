@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BASE_URL } from "../../context/cartContext";
 import axios from "axios";
+import ProductCard from "../../components/productCard";
+import styles from "./styles.module.css";
+import bannerImage from "../../assets/Banner.png";
 
 function Main() {
   const [products, setProducts] = useState([]);
@@ -11,7 +14,7 @@ function Main() {
       const response = await axios.get(`${BASE_URL}/productData`);
       setProducts(response.data);
     } catch (error) {
-      console.error("Error occured when fetching products: ", error);
+      console.error("Error occurred when fetching products: ", error);
       setError("Не удалось загрузить товары.");
     }
   }
@@ -22,15 +25,16 @@ function Main() {
 
   return (
     <main>
+      <div className={styles.bannerContainer}>
+        <img src={bannerImage} alt="Banner" className={styles.bannerImage} />
+      </div>
       <h1>Товары</h1>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <div>
+      <div
+        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+      >
         {products.map(({ id, name, image, price }) => (
-          <div key={id}>
-            <h1>{name}</h1>
-            <img src={image} alt={name} />
-            <h2>Цена: {price}</h2>
-          </div>
+          <ProductCard key={id} name={name} image={image} price={price} />
         ))}
       </div>
     </main>
