@@ -4,7 +4,6 @@ import {
   CardMedia,
   Typography,
   IconButton,
-  Box,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import styles from "./styles.module.css";
@@ -14,7 +13,6 @@ const ProductCard = ({ name, image, price }) => {
     <Card className={styles.card}>
       <CardMedia
         component="img"
-        height="140"
         image={image}
         alt={name}
         className={styles.cardMedia}
@@ -26,7 +24,7 @@ const ProductCard = ({ name, image, price }) => {
         <Typography variant="h6" component="div">
           {name}
         </Typography>
-        <Box className={styles.priceContainer}>
+        <div className={styles.priceContainer}>
           <Typography
             variant="body2"
             color="text.secondary"
@@ -41,13 +39,11 @@ const ProductCard = ({ name, image, price }) => {
           >
             {price} €
           </Typography>
-        </Box>
+        </div>
       </CardContent>
-      <Box className={styles.addButtonContainer}>
-        <IconButton className={styles.addButton}>
-          <AddIcon />
-        </IconButton>
-      </Box>
+      <IconButton className={styles.addButton}>
+        <AddIcon />
+      </IconButton>
     </Card>
   );
 };

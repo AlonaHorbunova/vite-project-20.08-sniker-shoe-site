@@ -24,15 +24,14 @@ function Main() {
   }, []);
 
   return (
-    <main>
+    <main className={styles.mainContainer}>
       <div className={styles.bannerContainer}>
         <img src={bannerImage} alt="Banner" className={styles.bannerImage} />
       </div>
-      <h1>Товары</h1>
+      <h1 className={styles.title}>Товары</h1>
+      <div className={styles.line}></div>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <div
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
+      <div className={styles.productsContainer}>
         {products.map(({ id, name, image, price }) => (
           <ProductCard key={id} name={name} image={image} price={price} />
         ))}

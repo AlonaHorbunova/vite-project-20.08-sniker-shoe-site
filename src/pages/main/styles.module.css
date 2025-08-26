@@ -1,7 +1,19 @@
-.bannerContainer {
+.mainContainer {
   width: 100%;
   max-width: 1420px;
-  margin: 0 auto 20px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  h1 {
+    font-size: 36px;
+    margin-top: 72px;
+    margin-bottom: 37px;
+  }
+}
+
+.bannerContainer {
+  width: 100%;
+  margin: 0 auto;
   padding-top: 28px;
   box-sizing: border-box;
 }
@@ -22,13 +34,19 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 20px;
-  max-width: 1420px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .productCard {
-  flex: 1 1 calc(33.333% - 20px);
+  flex: 0 0 calc(33.333% - 20px);
   max-width: calc(33.333% - 20px);
   box-sizing: border-box;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  max-width: 1420px;
+  background-color: #eaeaea;
+  margin: 0 auto 45px auto;
 }
