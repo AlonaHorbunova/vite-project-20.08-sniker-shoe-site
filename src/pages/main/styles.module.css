@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1420px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
   box-sizing: border-box;
   h1 {
     font-size: 36px;
@@ -21,26 +21,11 @@
 .bannerImage {
   width: 100%;
   height: auto;
-  border-radius: 8px;
 }
 
 .bannerContainer img {
   width: 100%;
   height: auto;
-}
-
-.productsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 20px;
-  margin: 0 auto;
-}
-
-.productCard {
-  flex: 0 0 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
-  box-sizing: border-box;
 }
 
 .line {
@@ -49,4 +34,13 @@
   max-width: 1420px;
   background-color: #eaeaea;
   margin: 0 auto 45px auto;
+}
+
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* или просто удалите эту строку, так как flex-start — значение по умолчанию */
+  gap: 131px; /* расстояние между карточками */
+  margin: 0 auto;
+  max-width: 1420px; /* ограничим ширину контейнера, чтобы помещалось ровно 3 карточки */
 }
